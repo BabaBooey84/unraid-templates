@@ -14,7 +14,7 @@
 This Unraid template is maintained by the community, not the original developer.&#13;
 All credit goes to the original author, MatiasDesuu.</Overview>
   <Category>Other:</Category>
-  <WebUI>http://[IP]:[PORT:8484]</WebUI>
+  <WebUI>http://[IP]:[PORT:8080]</WebUI>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/MatiasDesuu/ThinkDashboard/442f4650122af26d2dae1a88cba5e1f7b2a3e2d9/static/favicon.ico</Icon>
   <ExtraParams>--restart unless-stopped</ExtraParams>
