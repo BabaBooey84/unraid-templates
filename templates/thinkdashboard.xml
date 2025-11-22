@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>ThinkDashboard</Name>
+  <Repository>ghcr.io/matiasdesuu/thinkdashboard:latest</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/MatiasDesuu/ThinkDashboard/issues</Support>
+  <Project>https://github.com/MatiasDesuu/ThinkDashboard</Project>
+  <Overview>A lightweight, self-hosted bookmark dashboard built with Go and vanilla JavaScript.&#13;
+&#13;
+This Unraid template is maintained by the community, not the original developer.&#13;
+All credit goes to the original author, MatiasDesuu.</Overview>
+  <Category>Other:</Category>
+  <WebUI>http://[IP]:[PORT:8484]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/MatiasDesuu/ThinkDashboard/442f4650122af26d2dae1a88cba5e1f7b2a3e2d9/static/favicon.ico</Icon>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1761925011</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Web UI" Target="8080" Default="8080" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">8484</Config>
+  <Config Name="AppData" Target="/app/data" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/thinkdashboard</Config>
+  <TailscaleStateDir/>
+</Container>
