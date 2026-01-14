@@ -18,8 +18,6 @@ Features:&#13;
 - Minimal resource usage&#13;
 - Simple password-based auth&#13;
 &#13;
-&#x26A0;&#xFE0F; IMPORTANT:&#13;
-All persistent data (SQLite DB) is stored in /mnt/user/appdata/koffan&#13;
 Change APP_PASSWORD on first install.&#13;
   </Overview>
   <Category>Productivity</Category>
