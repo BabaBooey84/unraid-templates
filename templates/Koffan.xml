@@ -21,7 +21,7 @@ Features:&#13;
 Change APP_PASSWORD on first install.&#13;
   </Overview>
   <Category>Productivity</Category>
-  <WebUI>http://[IP]:[PORT:3011]</WebUI>
+  <WebUI>http://[IP]:[PORT:3000]</WebUI>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/PanSalut/Koffan/72563f8d64f4995b9749eafa3b12fbdf848bf862/static/icon-192.png</Icon>
   <ExtraParams>--restart unless-stopped</ExtraParams>
