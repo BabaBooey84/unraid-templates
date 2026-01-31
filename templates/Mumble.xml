@@ -9,7 +9,7 @@
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
 
-  <Category>Network:Other,Network:Voip</Category>
+  <Category>Network:Other</Category>
 
   <Project>https://github.com/mumble-voip/mumble-docker</Project>
   <Support>https://github.com/mumble-voip/mumble-docker/issues</Support>
