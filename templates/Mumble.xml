@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>Mumble</Name>
+
+  <Repository>mumblevoip/mumble-server:latest</Repository>
+  <Registry>https://hub.docker.com/r/mumblevoip/mumble-server</Registry>
+
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+
+  <Category>Network:Other,Network:Voip</Category>
+
+  <Project>https://github.com/mumble-voip/mumble-docker</Project>
+  <Support>https://github.com/mumble-voip/mumble-docker/issues</Support>
+
+  <TemplateURL>https://raw.githubusercontent.com/BabaBooey84/unraid-templates/main/templates/Mumble.xml</TemplateURL>
+
+  <Icon>https://avatars.githubusercontent.com/u/639008?s=256</Icon>
+
+  <Overview>Mumble is a low-latency, high-quality voice chat server (Discord-style voice rooms / channels).
+This template uses the official mumblevoip/mumble-server image.
+
+Private by default:
+- This template does NOT enable public directory registration.
+- Optional Server Password (join password) can be used for friends-only access.
+
+If you want public listing (advanced):
+- Edit /data/mumble_server_config.ini and configure the public registration keys (e.g. registerurl/registerpassword).
+- Public registration requires an empty join password and allowping enabled.
+Most users should keep the server private.</Overview>
+
+  <WebUI></WebUI>
+
+  <ExtraParams>--cap-add=SYS_NICE</ExtraParams>
+
+  <Config Name="Localtime" Target="/etc/localtime" Default="/etc/localtime" Mode="ro" Description="Container localtime (recommended)" Type="Path" Display="advanced" Required="false" Mask="false"/>
+
+  <Config Name="Appdata" Target="/data" Default="/mnt/user/appdata/mumble" Mode="rw" Description="Persistent data (DB + generated config). Must be mapped for persistence." Type="Path" Display="always" Required="true" Mask="false"/>
+
+  <Config Name="Mumble Port (TCP)" Target="64738" Default="64738" Mode="tcp" Description="Mumble TCP port (default 64738)" Type="Port" Display="always" Required="true" Mask="false"/>
+  <Config Name="Mumble Port (UDP)" Target="64738" Default="64738" Mode="udp" Description="Mumble UDP port (default 64738)" Type="Port" Display="always" Required="true" Mask="false"/>
+
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Host user id (optional). Default image uses UID 10000 if unset." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Host group id (optional). Default image uses GID 10000 if unset." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+
+  <Config Name="TZ" Target="TZ" Default="" Mode="" Description="Timezone (optional). Example: Europe/London, America/New_York" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+
+  <Config Name="SuperUser Password" Target="MUMBLE_SUPERUSER_PASSWORD" Default="" Mode="" Description="Set SuperUser (admin) password. If blank, a random password is generated on first startup (check logs)." Type="Variable" Display="always" Required="false" Mask="true"/>
+
+  <Config Name="Welcome Message (welcometext)" Target="MUMBLE_CONFIG_welcometext" Default="Welcome! Please be nice." Mode="" Description="Message shown to users when they connect (welcometext)" Type="Variable" Display="always" Required="false" Mask="false"/>
+
+  <Config Name="Max Users (users)" Target="MUMBLE_CONFIG_users" Default="25" Mode="" Description="Max concurrent users (users). Example: 25" Type="Variable" Display="always" Required="false" Mask="false"/>
+
+  <Config Name="Per-User Bandwidth bps (bandwidth)" Target="MUMBLE_CONFIG_bandwidth" Default="96000" Mode="" Description="Max per-user Opus bitrate in bits/sec. 96000 = excellent quality. 128000 = near-transparent." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+
+  <Config Name="Server Password (serverpassword)" Target="MUMBLE_CONFIG_serverpassword" Default="" Mode="" Description="Optional join password for users (serverpassword). Leave blank for open access." Type="Variable" Display="advanced" Required="false" Mask="true"/>
+
+  <Config Name="Bind Address (host)" Target="MUMBLE_CONFIG_host" Default="" Mode="" Description="Optional bind address (host). Leave blank to bind all interfaces." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+
+  <Config Name="Allow Ping Details (allowping)" Target="MUMBLE_CONFIG_allowping" Default="true" Mode="" Description="Expose basic server status (user count/max). Does not allow joining." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+
+  <Config Name="Autoban Attempts" Target="MUMBLE_CONFIG_autobanAttempts" Default="10" Mode="" Description="Failed auth attempts before banning (autobanAttempts)" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Autoban Timeframe (sec)" Target="MUMBLE_CONFIG_autobanTimeframe" Default="120" Mode="" Description="Time window for failed attempts (autobanTimeframe, seconds)" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Autoban Time (sec)" Target="MUMBLE_CONFIG_autobanTime" Default="300" Mode="" Description="Ban duration (autobanTime, seconds)" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+
+  <Config Name="Verbose Logging" Target="MUMBLE_VERBOSE" Default="false" Mode="" Description="Enable verbose server logs (true/false)" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+
+</Container>
