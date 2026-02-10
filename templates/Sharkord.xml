@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Sharkord</Name>
+  <Repository>sharkord/sharkord:latest</Repository>
+  <Registry>https://hub.docker.com/r/sharkord/sharkord</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Sharkord/sharkord/issues</Support>
+  <Project>https://github.com/Sharkord/sharkord</Project>
+
+  <Overview>Sharkord is a self-hosted real-time communication platform (Discord-like) with text and WebRTC (voice/video/screen sharing).
+FIRST RUN: After starting the container, see the GitHub README for “Gain Owner Permissions” to claim ownership.
+
+HTTPS: Sharkord does not include built-in HTTPS. Use a reverse proxy (e.g. Nginx or Caddy) for SSL/TLS.
+
+Alpha software — expect breaking changes.</Overview>
+
+  <Category>Other</Category>
+  <WebUI>http://[IP]:[PORT:4991]/</WebUI>
+  <Icon>https://raw.githubusercontent.com/Sharkord/sharkord/05c9cc9c75fd0ae04e5ccba369fd85f381ec9e82/apps/client/public/logo.webp</Icon>
+
+  <!-- Persistent data -->
+  <Config
+    Name="Appdata"
+    Target="/root/.config/sharkord"
+    Default="/mnt/user/appdata/sharkord"
+    Mode="rw"
+    Description="Persistent Sharkord config/data (config.ini is created on first run)"
+    Type="Path"
+    Display="always"
+    Required="true"
+    Mask="false"/>
+
+  <!-- Main HTTP/WebSocket port -->
+  <Config
+    Name="Web UI Port"
+    Target="4991"
+    Default="4991"
+    Mode="tcp"
+    Description="Sharkord HTTP/WebSocket port"
+    Type="Port"
+    Display="always"
+    Required="true"
+    Mask="false"/>
+
+  <!-- WebRTC port range -->
+  <Config
+    Name="WebRTC TCP Port Range"
+    Target="40000-40020"
+    Default="40000-40020"
+    Mode="tcp"
+    Description="WebRTC media ports (TCP). Host and container ranges must match."
+    Type="Port"
+    Display="always"
+    Required="true"
+    Mask="false"/>
+
+  <Config
+    Name="WebRTC UDP Port Range"
+    Target="40000-40020"
+    Default="40000-40020"
+    Mode="udp"
+    Description="WebRTC media ports (UDP). Required for voice/video/screen sharing."
+    Type="Port"
+    Display="always"
+    Required="true"
+    Mask="false"/>
+
+  <!-- Optional -->
+  <Config
+    Name="Timezone (TZ)"
+    Target="TZ"
+    Default=""
+    Mode=""
+    Description="Container timezone (optional)"
+    Type="Variable"
+    Display="advanced"
+    Required="false"
+    Mask="false"/>
+</Container>
