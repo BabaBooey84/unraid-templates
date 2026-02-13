@@ -12,7 +12,7 @@
   <Category>Other</Category>
 
   <Project>https://github.com/mumble-voip/mumble-docker</Project>
-  <Support>https://github.com/mumble-voip/mumble-docker/issues</Support>
+  <Support>https://forums.unraid.net/topic/197162-support-uderzos-ca-repo/</Support>
 
   <TemplateURL>https://raw.githubusercontent.com/BabaBooey84/unraid-templates/main/templates/Mumble.xml</TemplateURL>
 
