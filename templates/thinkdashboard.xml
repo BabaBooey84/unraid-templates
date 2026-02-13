@@ -5,7 +5,7 @@
   <Network>bridge</Network>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support>https://github.com/MatiasDesuu/ThinkDashboard/issues</Support>
+  <Support>https://forums.unraid.net/topic/197162-support-uderzos-ca-repo/</Support>
   <Project>https://github.com/MatiasDesuu/ThinkDashboard</Project>
   <Overview>A lightweight, self-hosted bookmark dashboard built with Go and vanilla JavaScript.&#13;
 &#13;
