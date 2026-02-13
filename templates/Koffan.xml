@@ -6,7 +6,7 @@
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
 
-  <Support>https://github.com/PanSalut/Koffan/issues</Support>
+  <Support>https://forums.unraid.net/topic/197162-support-uderzos-ca-repo/</Support>
   <Project>https://github.com/PanSalut/Koffan</Project>
 
   <Overview>Koffan is a lightweight, self-hosted shopping list app designed for families and couples.
