@@ -5,7 +5,7 @@
   <Registry>https://hub.docker.com/r/sharkord/sharkord</Registry>
   <Network>bridge</Network>
   <Privileged>false</Privileged>
-  <Support>https://github.com/Sharkord/sharkord/issues</Support>
+  <Support>https://forums.unraid.net/topic/197162-support-uderzos-ca-repo/</Support>
   <Project>https://github.com/Sharkord/sharkord</Project>
 
   <Overview>Sharkord is a self-hosted real-time communication platform (Discord-like) with text and WebRTC (voice/video/screen sharing).
@@ -77,4 +77,5 @@ Alpha software — expect breaking changes.</Overview>
     Display="advanced"
     Required="false"
     Mask="false"/>
+
 </Container>
