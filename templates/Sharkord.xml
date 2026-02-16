@@ -43,7 +43,7 @@ Alpha software — expect breaking changes.</Overview>
     Required="true"
     Mask="false"/>
 
-  <!-- WebRTC port range -->
+  <!-- WebRTC port -->
   <Config
     Name="WebRTC TCP Port"
     Target="40000"
@@ -79,4 +79,5 @@ Alpha software — expect breaking changes.</Overview>
     Mask="false"/>
 
 </Container>
+
 
