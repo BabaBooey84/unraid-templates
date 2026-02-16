@@ -45,22 +45,22 @@ Alpha software — expect breaking changes.</Overview>
 
   <!-- WebRTC port range -->
   <Config
-    Name="WebRTC TCP Port Range"
-    Target="40000-40020"
-    Default="40000-40020"
+    Name="WebRTC TCP Port"
+    Target="40000"
+    Default="40000"
     Mode="tcp"
-    Description="WebRTC media ports (TCP). Host and container ranges must match."
+    Description="WebRTC media port (TCP). Host and container port must match."
     Type="Port"
     Display="always"
     Required="true"
     Mask="false"/>
 
   <Config
-    Name="WebRTC UDP Port Range"
-    Target="40000-40020"
-    Default="40000-40020"
+    Name="WebRTC UDP Port"
+    Target="40000"
+    Default="40000"
     Mode="udp"
-    Description="WebRTC media ports (UDP). Required for voice/video/screen sharing."
+    Description="WebRTC media port (UDP). Required for voice/video/screen sharing."
     Type="Port"
     Display="always"
     Required="true"
@@ -79,3 +79,4 @@ Alpha software — expect breaking changes.</Overview>
     Mask="false"/>
 
 </Container>
+
