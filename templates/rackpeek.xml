@@ -11,11 +11,12 @@
   <Overview>RackPeek is a lightweight, opinionated CLI tool + Web UI for documenting and managing homelab and small-scale IT infrastructure.</Overview>
   <Category>Tools</Category>
   <WebUI>http://[IP]:[PORT:8080]/</WebUI>
-  <Icon>https://raw.githubusercontent.com/BabaBooey84/unraid-templates/main/rackpeek.png</Icon>
+  <Icon>https://raw.githubusercontent.com/Timmoth/RackPeek/main/assets/rackpeek_logo_128x128.png</Icon>
 
   <ExtraParams>--user 99:100</ExtraParams>
   <PostArgs></PostArgs>
 
   <Config Name="WebUI Port" Target="8080" Default="8080" Mode="tcp" Description="RackPeek Web UI port." Type="Port" Display="always" Required="true" Mask="false"/>
   <Config Name="Appdata" Target="/app/config" Default="/mnt/user/appdata/rackpeek" Mode="rw" Description="Persistent RackPeek config/state (YAML) stored under /app/config." Type="Path" Display="always" Required="true" Mask="false"/>
+
 </Container>
