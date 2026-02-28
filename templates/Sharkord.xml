@@ -5,10 +5,13 @@
   <Registry>https://hub.docker.com/r/sharkord/sharkord</Registry>
   <Network>bridge</Network>
   <Privileged>false</Privileged>
-  <Support>https://forums.unraid.net/topic/197162-support-uderzos-ca-repo/</Support>
+  <Support>https://github.com/Sharkord/sharkord/issues</Support>
   <Project>https://github.com/Sharkord/sharkord</Project>
 
   <Overview>Sharkord is a self-hosted real-time communication platform (Discord-like) with text and WebRTC (voice/video/screen sharing).
+
+NOTE: The container no longer runs as root (it runs as the non-root user "bun", uid 1000). Ensure your appdata path is writable by uid 1000 to avoid EACCES errors (e.g. chown -R 1000:1000 /mnt/user/appdata/sharkord).
+
 FIRST RUN: After starting the container, see the GitHub README for “Gain Owner Permissions” to claim ownership.
 
 HTTPS: Sharkord does not include built-in HTTPS. Use a reverse proxy (e.g. Nginx or Caddy) for SSL/TLS.
@@ -22,10 +25,10 @@ Alpha software — expect breaking changes.</Overview>
   <!-- Persistent data -->
   <Config
     Name="Appdata"
-    Target="/root/.config/sharkord"
+    Target="/home/bun/.config/sharkord"
     Default="/mnt/user/appdata/sharkord"
     Mode="rw"
-    Description="Persistent Sharkord config/data (config.ini is created on first run)"
+    Description="Persistent Sharkord config/data (config.ini is created on first run). Container runs as uid 1000 (bun) — ensure this path is writable."
     Type="Path"
     Display="always"
     Required="true"
@@ -43,24 +46,24 @@ Alpha software — expect breaking changes.</Overview>
     Required="true"
     Mask="false"/>
 
-  <!-- WebRTC port -->
+  <!-- WebRTC port range -->
   <Config
-    Name="WebRTC TCP Port"
-    Target="40000"
-    Default="40000"
+    Name="WebRTC TCP Port Range"
+    Target="40000-40020"
+    Default="40000-40020"
     Mode="tcp"
-    Description="WebRTC media port (TCP). Host and container port must match."
+    Description="WebRTC media ports (TCP). Host and container ranges must match."
     Type="Port"
     Display="always"
     Required="true"
     Mask="false"/>
 
   <Config
-    Name="WebRTC UDP Port"
-    Target="40000"
-    Default="40000"
+    Name="WebRTC UDP Port Range"
+    Target="40000-40020"
+    Default="40000-40020"
     Mode="udp"
-    Description="WebRTC media port (UDP). Required for voice/video/screen sharing."
+    Description="WebRTC media ports (UDP). Required for voice/video/screen sharing."
     Type="Port"
     Display="always"
     Required="true"
@@ -77,7 +80,4 @@ Alpha software — expect breaking changes.</Overview>
     Display="advanced"
     Required="false"
     Mask="false"/>
-
 </Container>
-
-
