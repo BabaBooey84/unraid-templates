@@ -11,6 +11,8 @@
   <Overview>Sharkord is a self-hosted real-time communication platform (Discord-like) with text and WebRTC (voice/video/screen sharing).
 
 FIRST RUN: After starting the container, see the GitHub README for “Gain Owner Permissions” to claim ownership.
+If you get EACCES errors, run:
+chown -R 1000:1000 /mnt/user/appdata/sharkord
 
 HTTPS: Sharkord does not include built-in HTTPS. Use a reverse proxy (e.g. Nginx or Caddy) for SSL/TLS.
 
@@ -80,4 +82,5 @@ Alpha software — expect breaking changes.</Overview>
     Required="false"
     Mask="false"/>
 </Container>
+
 
