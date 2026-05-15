@@ -23,13 +23,13 @@ Change APP_PASSWORD on first install.
   <Category>Productivity</Category>
 
   <!-- IMPORTANT: reference container port (Target), not host port -->
-  <WebUI>http://[IP]:[PORT:80]</WebUI>
+  <WebUI>http://[IP]:[PORT:8080]</WebUI>
 
   <Icon>https://raw.githubusercontent.com/PanSalut/Koffan/main/static/icon-192.png</Icon>
   <ExtraParams>--restart unless-stopped</ExtraParams>
 
   <!-- Ports -->
-  <Config Name="WebUI Port" Type="Port" Target="80" Default="3000" Mode="tcp" Display="always" Required="true">3000</Config>
+  <Config Name="WebUI Port" Type="Port" Target="8080" Default="3000" Mode="tcp" Display="always" Required="true">3000</Config>
 
   <!-- Paths -->
   <Config Name="AppData Directory" Type="Path" Target="/data" Default="/mnt/user/appdata/koffan" Mode="rw" Display="always" Required="true">/mnt/user/appdata/koffan</Config>
