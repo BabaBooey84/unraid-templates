@@ -28,7 +28,9 @@ Private by default:
 If you want public listing (advanced):
 - Edit /data/mumble_server_config.ini and configure the public registration keys (e.g. registerurl/registerpassword).
 - Public registration requires an empty join password and allowping enabled.
-Most users should keep the server private.</Overview>
+Most users should keep the server private.
+  
+Login as `SuperUser` for initial setup and mark your regualr account as an admin.</Overview>
 
   <WebUI></WebUI>
 
